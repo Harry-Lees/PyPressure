@@ -19,7 +19,7 @@ Easy Conversions
 >> pa: float = 25.0
 >> psi: float = Pressure.patopsi(pa)
 >> psi
-0.00362594
+0.003625943443250004
 ```
 
 Simple Math and Comparisons built in
@@ -30,7 +30,7 @@ Simple Math and Comparisons built in
 >> end: Pressure = Pressure.frompsi(50.0)
 >> delta_p = start - end
 >> delta_p
-Pressure(Pa=37921.2, psi=5.5, bar=0.38)
+Pressure(pa=37921.165, psi=5.5, bar=0.379)
 ```
 
 For more examples please see the examples folder
