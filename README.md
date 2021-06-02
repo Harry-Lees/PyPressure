@@ -1,5 +1,7 @@
 # PyPressure
 
+![Workflow](https://github.com/Harry-Lees/PyPressure/actions/workflows/workflow.yml/badge.svg)
+
 A simple pressure conversion library for Python 3.
 
 ## Installation
@@ -12,7 +14,7 @@ python3 -m pip install pypressure
 
 ## Examples
 
-Easy Conversions
+Easy Conversions:
 
 ```python
 >> from pypressure import Pressure
@@ -22,7 +24,7 @@ Easy Conversions
 0.003625943443250004
 ```
 
-Simple Math and Comparisons built in
+Simple Math and Comparisons built in:
 
 ```python
 >> from pypressure import Pressure
@@ -33,7 +35,7 @@ Simple Math and Comparisons built in
 Pressure(pa=37921.165, psi=5.5, bar=0.379)
 ```
 
-For more examples please see the examples folder
+For more examples please see the examples folder.
 
 ## Supported Units
 
