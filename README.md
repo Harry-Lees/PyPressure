@@ -27,6 +27,18 @@ Pressure(Pa=37921.2, psi=5.5, bar=0.38)
 
 For more examples please see the examples folder
 
+## Supported Units
+
+Currently the supported units are:
+* Bar
+* Pounds Per Square Inch (psi)
+* Pascals (Pa)
+
+Future Support for:
+* Atmospheres (atm)
+* Inch of Mercury Column (inHg)
+* Kilogram per Centimeter (KgCm)
+
 ## License
 
 This project is released under the MIT license.
