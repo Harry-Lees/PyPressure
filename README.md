@@ -2,6 +2,14 @@
 
 A simple pressure conversion library for Python 3.
 
+## Installation
+
+This project can be installed from PyPi
+
+```python
+python3 -m pip install pypressure
+```
+
 ## Examples
 
 Easy Conversions
