@@ -1,31 +1,38 @@
 from __future__ import annotations
+from typing import Type
 from numbers import Real
 
 class Pressure:
     def __init__(self, pressure: Real) -> None:
         self._p = pressure
 
-    def __add__(self, other) -> Pressure:
+    def __repr__(self, precision=3) -> str:
+        return f'Pressure(pa={round(self.pa, precision)}, psi={round(self.psi, precision)}, bar={round(self.bar, precision)})'
+
+    def __add__(self, other: Pressure) -> Pressure:
         return Pressure(self.pa + other.pa)
 
-    def __mul__(self, other) -> Pressure:
+    def __mul__(self, other: Pressure) -> Pressure:
         return Pressure(self.pa * other.pa)
 
-    def __sub__(self, other) -> Pressure:
+    def __sub__(self, other: Pressure) -> Pressure:
         return Pressure(self.pa - other.pa)
 
-    def __div__(self, other) -> Pressure:
+    def __div__(self, other: Pressure) -> Pressure:
         return Pressure(self.pa / other.pa)
 
-    def __lt__(self, other) -> bool:
+    def __lt__(self, other: Pressure) -> bool:
         return self.pa < other.pa
 
+    def __eq__(self, other: Pressure) -> bool:
+        return self.pa == other.pa
+
     @classmethod
-    def frompsi(cls: Pressure, pressure: Real) -> Pressure:
+    def frompsi(cls: Type[Pressure], pressure: Real) -> Pressure:
         return cls(Pressure.psitopa(pressure))
 
     @classmethod
-    def frombar(cls: Pressure, pressure: Real) -> Pressure:
+    def frombar(cls: Type[Pressure], pressure: Real) -> Pressure:
         return cls(Pressure.bartopa(pressure))
 
     @property
@@ -52,20 +59,26 @@ class Pressure:
     def bar(self, pressure: Real) -> None:
         self._p = self.bartopa(pressure)
 
-    def bartopsi(self, pressure: Real) -> Real:
-        return pressure * 14.504
+    @staticmethod
+    def bartopsi(pressure: Real) -> Real:
+        return pressure * 14.503773773
 
-    def bartopa(self, pressure: Real) -> Real:
+    @staticmethod
+    def bartopa(pressure: Real) -> Real:
         return pressure * 100000
 
-    def psitobar(self, pressure: Real) -> Real:
-        return pressure / 14.504
+    @staticmethod
+    def psitobar(pressure: Real) -> Real:
+        return pressure / 14.503773773
 
-    def psitopa(self, pressure: Real) -> Real:
-        return pressure * 6895
+    @staticmethod
+    def psitopa(pressure: Real) -> Real:
+        return pressure * 6894.7572931783
 
-    def patobar(self, pressure: Real) -> Real:
+    @staticmethod
+    def patobar(pressure: Real) -> Real:
         return pressure / 100000
 
-    def patopsi(self, pressure: Real) -> Real:
-        return pressure / 6895
+    @staticmethod
+    def patopsi(pressure: Real) -> Real:
+        return pressure / 6894.7572931783
