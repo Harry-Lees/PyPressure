@@ -1,6 +1,7 @@
 # PyPressure
 
 ![Workflow](https://github.com/Harry-Lees/PyPressure/actions/workflows/workflow.yml/badge.svg)
+[![Downloads](https://pepy.tech/badge/pypressure)](https://pepy.tech/project/pypressure)
 
 A simple pressure conversion library for Python 3.
 
